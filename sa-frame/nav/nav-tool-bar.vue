@@ -1,4 +1,4 @@
-<!-- 右边第一行，工具栏 -->
+<!-- Right side first row， Toolbar -->
 <template>
 	<div class="tools-panel">
 		<div class="tools-left">
@@ -43,11 +43,11 @@
 					</el-dropdown-menu>
 				</el-dropdown>
 			</span>
-			<span title="主题" class="tool-fox" style="padding: 0;">
+			<span title="Themes" class="tool-fox" style="padding: 0;">
 				<el-dropdown @command="toggleTheme" trigger="click" size="medium">
 					<span class="el-dropdown-link" style="height: 100%; padding: 0 1em; display: inline-block;">
 						<i class="el-icon-price-tag" style="font-weight: bold;"></i>
-						<span style="font-size: 0.9em;">主题</span>
+						<span style="font-size: 0.9em;">Themes</span>
 					</span>
 					<el-dropdown-menu slot="dropdown">
 						<el-dropdown-item :command="t.value" v-for="t in themeList" :key="t.name">
@@ -56,14 +56,16 @@
 					</el-dropdown-menu>
 				</el-dropdown>
 			</span> 
+			<!-- Remove stick note
 			<span title="便签" class="tool-fox" @click="openNote()">
 				<i class="el-icon-edit" style="font-weight: bold; font-size: 0.9em;"></i>
 				<span style="font-size: 0.9em;">便签</span>
 			</span>
-			<span title="全屏" class="tool-fox" v-if="isFullScreen == false" @click="fullScreen()">
+			-->
+			<span title="Full Screen" class="tool-fox" v-if="isFullScreen == false" @click="fullScreen()">
 				<i class="el-icon-rank" style="font-weight: bold; transform: rotate(45deg)"></i>
 			</span>
-			<span title="退出全屏" class="tool-fox" v-if="isFullScreen == true" @click="outFullScreen()">
+			<span title="Exit Full Screen" class="tool-fox" v-if="isFullScreen == true" @click="outFullScreen()">
 				<i class="el-icon-bottom-left" style="font-weight: bold; "></i>
 			</span>
 		</div>

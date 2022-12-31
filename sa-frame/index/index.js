@@ -1,7 +1,7 @@
-// 首页 
+// Homepage 
 var homeTab = {
 	id: 'home',	// 唯一标识 
-	name: '首页',
+	name: 'Homepage',
 	url: 'main.html',	// 页面地址 
 	isNeedLoad: false,		// 标注：是否需要此刻加载
 	hideClose: true	// 隐藏关闭键 
