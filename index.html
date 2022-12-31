@@ -14,39 +14,39 @@
 		<!-- App -->
 		<div class="app" style="display: none;" :style="'display: block;'" 
 			:class="['theme-0', 'theme-' + themeV, (isOpen ? '' : 'app-fold'), (isOpenRight ? '' : 'app-fold-right')]" >
-			<!-- 左 -->
+			<!-- Left -->
 			<div class="nav-left">
-				<!-- logo部分 -->
+				<!-- logo -->
 				<div class="nav-left-top">
 					<nav-logo></nav-logo>
 				</div>
-				<!-- 左下：菜单 -->
+				<!-- Left-Bottom：Menu -->
 				<div class="nav-left-bottom">
 					<nav-menu-bar ref="nav-menu-bar"></nav-menu-bar>
 				</div>
 			</div>
-			<!-- 右 -->
+			<!-- Right -->
 			<div class="nav-right">
-				<!-- 工具栏 -->
+				<!-- Toolbar -->
 				<div class="nav-right-1" des="">
 					<nav-tool-bar ref="nav-tool-bar"></nav-tool-bar>
 				</div>
-				<!-- Tab栏 -->
+				<!-- Tab -->
 				<div class="nav-right-2">
 					<nav-tab-bar ref="nav-tab-bar"></nav-tab-bar>
 				</div>
-				<!-- 视图容器 -->
+				<!-- Container -->
 				<div class="nav-right-3">
 					<nav-view-vessel></nav-view-vessel>
 				</div>
 			</div>
-			<!-- 右键菜单 -->
+			<!-- Right Click Menu -->
 			<com-right-menu ref="com-right-menu"></com-right-menu>
-			<!-- 双击添加新tab -->
+			<!-- Double Click to add new tab -->
 			<com-add-tab ref="com-add-tab"></com-add-tab>
 		</div>
 		
-		<!-- js依赖库 -->
+		<!-- js dependencies -->
 		<script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
 		<script type="text/javascript">Vue.config.productionTip = false;</script>
 		<script src="https://unpkg.com/http-vue-loader@1.4.2/src/httpVueLoader.js"></script>
@@ -58,7 +58,7 @@
 		<!-- <script src="https://www.itxst.com/package/sortable/sortable.min.js"></script> -->
 		<!-- <script src="https://www.itxst.com/package/vuedraggable/vuedraggable.umd.min.js"></script> -->
 		
-		<!-- js本地库 -->
+		<!-- js Local Libraries -->
 		<script src="sa-frame/index/admin-util.js"></script>
 		<script src="sa-frame/index/index.js"></script>
 		<script src="sa-frame/menu-list.js"></script>

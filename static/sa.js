@@ -1,32 +1,32 @@
-// =========================== sa对象封装一系列工具方法 ===========================  
+// =========================== sa objects ===========================  
 var sa = {
 	version: '2.4.3',
 	update_time: '2020-10-2',
-	info: '新增双击layer标题处全屏'
+	info: 'Translate Language'
 };
 
-// ===========================  当前环境配置  ======================================= 
+// ===========================  Run Environment Configuration  ======================================= 
 (function(){
-	// 公司开发环境
+	// Local development environment
 	var cfg_dev = {
-		api_url: 'http://127.0.0.1:8080',	// 所有ajax请求接口父地址
-		web_url: 'http://www.baidu.com'		// 此项目前台地址 (此配置项非必须)
+		api_url: 'http://demo-cdxdash.localhost',	// ajax request root address
+		web_url: 'http://demo-cdxdash.localhost'	// website frontend address (optional)
 	}
-	// 服务器测试环境
+	// Test environment
 	var cfg_test = {
-		api_url: 'http://www.baidu.com',
-		web_url: 'http://www.baidu.com'
+		api_url: 'http://demo-cdxdash.localhost',
+		web_url: 'http://demo-cdxdash.localhost'
 	}
-	// 正式生产环境
+	// Production environment
 	var cfg_prod = {
-		api_url: 'http://www.baidu.com',
-		web_url: 'http://www.baidu.com'
+		api_url: 'http://demo.cdxdash.com',
+		web_url: 'http://demo.cdxdash.com'
 	}
-	sa.cfg = cfg_dev; // 最终环境 , 上线前请选择正确的环境 
+	sa.cfg = cfg_prod; // Select correct environment before deployment 
 })();
 
 
-// ===========================  ajax的封装  ======================================= 
+// ===========================  ajax  ======================================= 
 (function(){
 	
 	/** 对ajax的再封装, 这个ajax假设你的接口会返回以下格式的内容 
@@ -51,7 +51,7 @@ var sa = {
 			errorfn: fn,	// ajax发生错误时的回调函数 (一般是ajax请求本身发生了错误)
 			complete: fn,	// ajax无论成功还是失败都会执行的回调函数  
 		}
-	 */
+	**/
 	sa.ajax = function(url, data, success200, cfg){
 		
 		// 如果是简写模式(省略了data参数)

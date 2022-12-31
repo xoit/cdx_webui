@@ -15,6 +15,8 @@
 // }
 
 // 定义菜单列表 
+
+// cdxdash: Original settings
 var menuList =	[
 	{
 		id: '2',
@@ -178,4 +180,42 @@ var menuList =	[
 			
 		]
 	},
+]
+
+// cdxdash: New settings
+var menuList =	[
+	{
+		id: '2',
+		name: 'CDX',
+		icon: 'el-icon-document-remove',
+		info: 'CDXDASH native function menu',
+		childList: [
+			{id: '2-3', name: 'Material Store', url: 'https://store.cdxdash.com'}
+			{id: '2-1', name: 'User Guide', url: 'https://docs.cdxdash.com/#/userguide/README'},
+			{id: '2-2', name: 'Dev Note', url: 'https://docs.cdxdash.com/#/devnote/README'},
+		]
+	},
+	{
+		id: '3',
+		name: 'PROJECT',
+		icon: 'el-icon-search',
+		info: 'SoC project related functions',
+		childList: [
+			{id: '3-1-1', name: '分类列表', icon: 'el-icon-eleme', url: 'sa-view/sys-type/sys-type-list.html'},
+			{id: '3-1-2', name: '分类添加', icon: 'el-icon-plus', url: 'sa-view/sys-type/sys-type-add.html'},
+			{id: '3-2-1', name: '轮播图列表', icon: 'el-icon-collection-tag', url: 'sa-view/home/swiper-list.html'},
+			{id: '3-2-2', name: '轮播图添加', icon: 'el-icon-plus', url: 'sa-view/home/swiper-add.html'},
+			{id: '3-3-1', name: '商品规格示例', icon: 'el-icon-plus', url: 'sa-view/ser-goods/ser-goods-add.html'},
+		]
+	},
+	{
+		id: '4',
+		name: 'USER',
+		icon: 'el-icon-unlock',
+		info: '对系统角色权限的分配等设计，敏感度较高，请谨慎授权',
+		childList: [
+			{id: '4-1', name: '角色列表', icon: 'el-icon-key', url: 'sa-view/role/role-list.html'},
+			{id: '4-2', name: '菜单列表', icon: 'el-icon-magic-stick', url: 'sa-view/role/menu-list.html'}
+		]
+	}
 ]
