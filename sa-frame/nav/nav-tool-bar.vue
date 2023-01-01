@@ -89,20 +89,20 @@
 				
 				isFullScreen: false,	// 是否处于全屏状态 
 				
-				nowTime: '加载中...'	,	// 当前时间 
+				nowTime: 'Loading...'	,	// 当前时间 
 				currInterval: null,		// 刷新当前时间的定时器 
 				
 				themeList: [	// 主题数组
-					{name: '蓝色', value: '1'},
-					{name: '绿色', value: '2'},
-					{name: '白色', value: '3'},
-					{name: '灰色', value: '4'},
-					{name: '红色', value: '5'},
-					{name: '紫色', value: '9'},
-					{name: 'pro钛合金', value: '6'},
-					{name: '沉淀黑蓝', value: '7'},
-					{name: '简约灰色', value: '8'},
-					{name: '简约草绿', value: '10'},
+					{name: 'Blue', value: '1'},
+					{name: 'Green', value: '2'},
+					{name: 'White', value: '3'},
+					{name: 'Grey', value: '4'},
+					{name: 'Red', value: '5'},
+					{name: 'Purple', value: '9'},
+					{name: 'Pro Golden', value: '6'},
+					{name: 'Dark Blue', value: '7'},
+					{name: 'Plain Grey', value: '8'},
+					{name: 'Grass Green', value: '10'},
 				],
 				
 			}
@@ -176,15 +176,15 @@
 				this.searchList = searchList;
 			},
 			
-			// ------------------------------ 主题 ------------------------------
-			// 切换主题
+			// ------------------------------ Themes ------------------------------
+			// Switch theme
 			toggleTheme: function(command) {
 				// 开始切换
 				this.$root.themeV = command + "";
 				localStorage.setItem('themeV', command);
 				for (var i = 0; i < this.themeList.length; i++) {
 					if(this.themeList[i].value + '' == command + '') {
-						this.$message('切换成功，' + this.themeList[i].name);
+						this.$message('Switch to ' + this.themeList[i].name);
 					}
 				}
 			},
@@ -267,31 +267,32 @@
 				if(this.currInterval) {
 					clearInterval(this.currInterval);
 				}
-				// 一直更新时间
+				// Update time
 				this.currInterval = setInterval(function() {
 					var da = new Date();
-					var Y = da.getFullYear(); //年
-					var M = da.getMonth() + 1; //月
-					var D = da.getDate(); //日
-					var h = da.getHours(); //小时
-					var sx = "凌晨";
+					var Y = da.getFullYear(); // Year
+					var M = da.getMonth() + 1; // Month
+					var D = da.getDate(); // Day
+					var h = da.getHours(); // Hour
+					var sx = "am";
 					if (h >= 6) {
-						sx = "上午"
+						sx = "am"
 					}
 					if (h >= 12) {
-						sx = "下午";
+						sx = "pm";
 						if (h >= 18) {
-							sx = "晚上";
+							sx = "pm";
 						}
 						h -= 12;
 					}
-					var m = da.getMinutes(); //分
-					var s = da.getSeconds(); //秒
-					var z = ['日', '一', '二', '三', '四', '五', '六'][da.getDay()] ; //周几
-					// z = z == 0 ? '日' : z;
+					var m = da.getMinutes(); // Minute
+					var s = da.getSeconds(); // Second
+					var z = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][da.getDay()] ; //周几
+					// z = z == 0 ? 'Sun' : z;
 					var zong = "";
 				
-					zong += Y + "-" + M + "-" + D + " " + sx + " " + h + ":" + m + ":" + s + " 周" + z;
+					//zong += Y + "-" + M + "-" + D + " " + sx + " " + h + ":" + m + ":" + s + " 周" + z;
+					zong += Y + "-" + M + "-" + D + " " + " " + h + ":" + m + ":" + s + " " + sx + ", "+ z;
 					this.nowTime = zong;
 				}.bind(this), 1000);
 			}

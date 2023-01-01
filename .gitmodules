@@ -1,0 +1,3 @@
+[submodule "static/vlsi/testcase"]
+	path = static/vlsi/testcase
+	url = git@github.com:xoit/cdx_testcase.git
